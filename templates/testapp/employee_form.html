@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{%extends "testapp/base.html" %}
+        {%block body_block%}
+       <div class="container">
+<html>
+<head>
+    <title>Create Employee</title>
+</head>
+<body>
+    <h1>Create Employee</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form> <br>
+    <a href="/employees">Back to Employee List</a>
+</body>
+</html>
+    </div>
+{%endblock%}

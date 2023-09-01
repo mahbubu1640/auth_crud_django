@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee List</title>
+</head>
+<body>
+    <h1>Employee List</h1>
+    <ul>
+        {% for employee in employees %}
+            <li>
+                <a href="{% url 'employee_list' %}"></a> 
+                {{ employee.name }}
+                {% if employee.image %}
+                    <img src="{{ employee.image.url }}" alt="{{ employee.name }} Image">
+                {% endif %}
+            </li> 
+            <li>
+                <a href="{% url 'employee_detail' id=employee.id %}">Details</a>
+                <a href="{% url 'update_employee' id=employee.id %}">Update</a>
+                <a href="{% url 'delete_employee' id=employee.id %}">Delete</a>
+            </li>
+            <br> <br> <br>
+        {% endfor %} 
+    </ul>
+    <a href="{% url 'create_employee' %}">Create New Employee</a>
+</body>
+</html>

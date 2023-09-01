@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Detail</title>
+</head>
+<body>
+    <h1>Employee Detail</h1>
+    <p>Name: {{ employee.name }}</p>
+    <p>Employee ID: {{ employee.id }}</p>
+    <p>Salary: {{ employee.salary }}</p>
+    <p>City: {{ employee.city }}</p>
+    {% if employee.image %}
+        <img src="{{ employee.image.url }}" alt="{{ employee.name }} Image">
+    {% endif %}
+    <a href="{% url 'employee_list' %}">Back to Employee List</a>
+</body>
+</html>
